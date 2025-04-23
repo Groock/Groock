@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @Groock
+- 👋 Hi, I’m @Groock, this is my portfolio of code projects
 - 👀 I’m interested in artificial intelligence, media theory and art practice
 - 🌱 I’m currently learning python, html, processing, a bit of java and C++
 - 💞️ I’m looking to collaborate on ideas, theory, projects
