@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- This HTML page is a standard page for the 3D CGI webspaces that I constrcut in Blender, Unity and Unreal Engine, such as The Virtual Alfred Arcade, Trinity Art Group Wespace and Groocks Gallery. I've played around with some settings in here before. It loads Javascripts that run the ame, not included those as they are massive files. -->
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Unity WebGL Player | Unity CHT Web Space</title>
+  </head>
+  <body>
+    <canvas id="unity-canvas" width="1024" height="576" 
+    style="width:100%; height: 100%; display: inline-block; overflow: hidden;
+    position: absolute; top: 0px; left: 0px; right: auto; bottom: auto; 
+    margin: 0%; background: #231F20">
+    </canvas>
+    <script src="index.js"></script>
+    <script src="Build/webspace.loader.js"></script>
+    <script>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+      }
+
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/webspace.data",
+        frameworkUrl: "Build/webspace.framework.js",
+        codeUrl: "Build/webspace.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Unity CHT Web Space",
+        productVersion: "0.1",
+        matchWebGLToCanvasSize: true, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>
